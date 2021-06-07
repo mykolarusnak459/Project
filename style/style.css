@@ -1,16 +1,30 @@
 
 .button_id {
-    height: 5px;
+    height: 1px;
     width: 1px;
     position:absolute ;
-    /* margin: -25px 0 0 -50px; half height and half width */
+    left: 40%;
+    top: 25%;
+    }
+  
+.users_name{
+    height: 1px;
+    width: 1px;
+    position:absolute ;
     left: 50%;
-    top: 50%;
+    top: 25%;
+}
+
+    .app{
+      position: absolute;
+      background-color: blue;
+      border: blue;
+      left: 25%;
+      top: 25%;
     }
 
 
-
-/* body { 
+body { 
   font-family: "Tahoma", sans-serif;
   font-size: 18px;
   line-height: 25px;
@@ -19,21 +33,21 @@
   background-color: #b2d9d0;
 }
 
-.tasks__title {
+.button{
   margin: 50px 0 20px 0;
 
   text-align: center;
   text-transform: uppercase;
  }
 
-.tasks__list {
+.button_identifier {
   margin: 0;
   padding: 0;
 
   list-style: none;
 }
 
-.tasks__item {
+.button_id {
   transition: background-color 0.5s;
   margin-bottom: 10px;
   padding: 5px;
@@ -47,11 +61,10 @@
   transition: background-color 0.5s;
 }
 
-.tasks__item:last-child {
+.button_id:last-child {
   margin-bottom: 0;
 }
 
 .selected {
   opacity: 0.6;
 }
- */

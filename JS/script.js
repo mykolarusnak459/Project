@@ -1,6 +1,5 @@
 
 
-
 const buttonIdElement = document.querySelector(`.button_id`);
 const buttonElements = buttonIdElement.querySelectorAll(`.button_user`);
 
@@ -60,10 +59,10 @@ const getNextElement = (cursorPosition, currentElement) => {
     return nextElement;
 };
 
-tasksListElement.addEventListener(`dragover`, (evt) => {
+buttonIdElement.addEventListener(`dragover`, (evt) => {
     evt.preventDefault();
 
-    const activeElement = tasksListElement.querySelector(`.selected`);
+    const activeElement = buttonIdElement.querySelector(`.selected`);
     const currentElement = evt.target;
     const isMoveable = activeElement !== currentElement &&
         currentElement.classList.contains(`button_user`);
@@ -86,5 +85,85 @@ tasksListElement.addEventListener(`dragover`, (evt) => {
         return;
     }
 
-    tasksListElement.insertBefore(activeElement, nextElement);
+    buttonIdElement.insertBefore(activeElement, nextElement);
+});
+
+// const url = 'https://jsonplaceholder.typicode.com/users/3';
+// fetch(url)
+//     .then(data => console.log(data));
+
+
+
+const url = 'https://jsonplaceholder.typicode.com/users/1';
+axios.get(url)
+    .then(response => console.log(response));
+
+// fetch(url)
+//     .catch(error => console.log('BAD', error))
+//     .then(response => (this.user_1 = response));
+
+new Vue({
+    el: '#name1',
+    data() {
+        return {
+            name: "name:"
+        };
+    },
+    mounted() {
+        axios
+            .get('https://jsonplaceholder.typicode.com/users/1')
+            .then(response => (this.name = response.data.name));
+    }
+});
+new Vue({
+    el: '#name2',
+    data() {
+        return {
+            name: "name:"
+        };
+    },
+    mounted() {
+        axios
+            .get('https://jsonplaceholder.typicode.com/users/2')
+            .then(response => (this.name = response.data.name));
+    }
+});
+new Vue({
+    el: '#name3',
+    data() {
+        return {
+            name: "name:"
+        };
+    },
+    mounted() {
+        axios
+            .get('https://jsonplaceholder.typicode.com/users/3')
+            .then(response => (this.name = response.data.name));
+    }
+});
+new Vue({
+    el: '#name4',
+    data() {
+        return {
+            name: "name:"
+        };
+    },
+    mounted() {
+        axios
+            .get('https://jsonplaceholder.typicode.com/users/4')
+            .then(response => (this.name = response.data.name));
+    }
+});
+new Vue({
+    el: '#name5',
+    data() {
+        return {
+            name: "name:"
+        };
+    },
+    mounted() {
+        axios
+            .get('https://jsonplaceholder.typicode.com/users/5')
+            .then(response => (this.name = response.data.name));
+    }
 });
