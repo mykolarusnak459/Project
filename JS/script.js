@@ -1,9 +1,8 @@
 
-
 const buttonIdElement = document.querySelector(`.button_id`);
 const buttonElements = buttonIdElement.querySelectorAll(`.button_user`);
 
-// Перебираем все элементы списка и присваиваем нужное значение
+// перебираємо всі елементи списка
 for (const task of buttonElements) {
     task.draggable = true;
 }
@@ -17,41 +16,39 @@ buttonIdElement.addEventListener(`dragend`, (evt) => {
 });
 
 buttonIdElement.addEventListener(`dragover`, (evt) => {
-    // Разрешаем сбрасывать элементы в эту область
+    // дозволяємо скидувати елементи в область
     evt.preventDefault();
 
-    // Находим перемещаемый элемент
+    // находимо об'єкт який переміщуємо
     const activeElement = buttonIdElement.querySelector(`.selected`);
-    // Находим элемент, над которым в данный момент находится курсор
+    // находимо елемент над яким знаходимось
     const currentElement = evt.target;
-    // Проверяем, что событие сработало:
-    // 1. не на том элементе, который мы перемещаем,
-    // 2. именно на элементе списка
+    // Перевіряємо
+
     const isMoveable = activeElement !== currentElement &&
         currentElement.classList.contains(`button_user`);
 
-    // Если нет, прерываем выполнение функции
     if (!isMoveable) {
         return;
     }
 
-    // Находим элемент, перед которым будем вставлять
+    // елемент перед яким будемо вставляти
     const nextElement = (currentElement === activeElement.nextElementSibling) ?
         currentElement.nextElementSibling :
         currentElement;
 
-    // Вставляем activeElement перед nextElement
+    // Вставляємо activeElement перед nextElement
     buttonIdElement.insertBefore(activeElement, nextElement);
 });
 
 const getNextElement = (cursorPosition, currentElement) => {
-    // Получаем объект с размерами и координатами
+    // Получаємо об'єкт з координатами
     const currentElementCoord = currentElement.getBoundingClientRect();
-    // Находим вертикальную координату центра текущего элемента
+    // вертикальна коорд
     const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
 
-    // Если курсор выше центра элемента, возвращаем текущий элемент
-    // В ином случае — следующий DOM-элемент
+    // якщо курсор вище ел повертаємо ел який перем
+    // в інш випадку наступний DOM-ел
     const nextElement = (cursorPosition < currentElementCenter) ?
         currentElement :
         currentElement.nextElementSibling;
@@ -71,17 +68,16 @@ buttonIdElement.addEventListener(`dragover`, (evt) => {
         return;
     }
 
-    // evt.clientY — вертикальная координата курсора в момент,
-    // когда сработало событие
+    // evt.clientY — верт коорд курс
+
     const nextElement = getNextElement(evt.clientY, currentElement);
 
-    // Проверяем, нужно ли менять элементы местами
+    // провір чи треба міняти місцями
     if (
         nextElement &&
         activeElement === nextElement.previousElementSibling ||
         activeElement === nextElement
     ) {
-        // Если нет, выходим из функции, чтобы избежать лишних изменений в DOM
         return;
     }
 
@@ -92,16 +88,14 @@ buttonIdElement.addEventListener(`dragover`, (evt) => {
 // fetch(url)
 //     .then(data => console.log(data));
 
-
-
-const url = 'https://jsonplaceholder.typicode.com/users/1';
-axios.get(url)
-    .then(response => console.log(response));
-
-// fetch(url)
-//     .catch(error => console.log('BAD', error))
-//     .then(response => (this.user_1 = response));
-
+// const url = 'https://jsonplaceholder.typicode.com/users/3';
+// axios.get(url)
+//     .then(response => console.log(response));
+// // fetch(url)
+// //     .catch(error => console.log('BAD', error))
+// //     .then(response => (this.user_1 = response));
+// використання axios для доступу до API
+//
 new Vue({
     el: '#name1',
     data() {
