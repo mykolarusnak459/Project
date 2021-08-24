@@ -1,7 +1,7 @@
 
 .button_id {
     height: 1px;
-    width: 1px;
+    width: 250px;
     position:absolute ;
     left: 40%;
     top: 25%;
@@ -9,7 +9,7 @@
   
 .users_name{
     height: 1px;
-    width: 1px;
+    width: 150px;
     position:absolute ;
     left: 50%;
     top: 25%;

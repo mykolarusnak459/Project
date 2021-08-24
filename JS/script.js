@@ -100,7 +100,7 @@ new Vue({
     el: '#name1',
     data() {
         return {
-            name: "name:"
+            name: "name:",
         };
     },
     mounted() {
@@ -161,3 +161,4 @@ new Vue({
             .then(response => (this.name = response.data.name));
     }
 });
+
