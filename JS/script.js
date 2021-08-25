@@ -91,9 +91,9 @@ buttonIdElement.addEventListener(`dragover`, (evt) => {
 // const url = 'https://jsonplaceholder.typicode.com/users/3';
 // axios.get(url)
 //     .then(response => console.log(response));
-// // fetch(url)
-// //     .catch(error => console.log('BAD', error))
-// //     .then(response => (this.user_1 = response));
+// // fetch(url) 
+// //     .catch(error => console.log('BAD', error)) 
+// //     .then(response => (this.user_1 = response)); 
 // використання axios для доступу до API
 //
 new Vue({
@@ -160,5 +160,7 @@ new Vue({
             .get('https://jsonplaceholder.typicode.com/users/5')
             .then(response => (this.name = response.data.name));
     }
-});
+}
+);
+
 
